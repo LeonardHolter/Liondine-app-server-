@@ -1,0 +1,17 @@
+# Nixpacks configuration for Railway
+# This file helps ensure proper builds
+
+[phases.setup]
+nixPkgs = ["nodejs_18", "npm-9_x"]
+
+[phases.install]
+cmds = ["npm ci --legacy-peer-deps"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm start"
+
+# Cache bust identifier - change this to force fresh build
+# Last updated: 2026-01-28-v2
