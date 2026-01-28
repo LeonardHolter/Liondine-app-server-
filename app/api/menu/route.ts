@@ -4,6 +4,10 @@ import { structureMenuData } from '@/lib/openai';
 import { menuCache } from '@/lib/cache';
 import { MealType } from '@/types/menu';
 
+// Force dynamic rendering - don't try to build this at build time
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 const VALID_MEAL_TYPES: MealType[] = ['breakfast', 'lunch', 'dinner', 'latenight'];
 
 export async function GET(request: NextRequest) {

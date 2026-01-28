@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { menuCache } from '@/lib/cache';
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 /**
  * Cache Management API
  * GET - View cache stats
