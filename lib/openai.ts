@@ -1,14 +1,23 @@
 import OpenAI from 'openai';
 import { MenuData } from '@/types/menu';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy-load OpenAI client to avoid build-time initialization
+let openaiClient: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!openaiClient) {
+    openaiClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return openaiClient;
+}
 
 export async function structureMenuData(
   menuText: string,
   mealType: string
 ): Promise<MenuData> {
+  const openai = getOpenAIClient();
   const prompt = `You are a data extraction assistant. Parse the following menu text from Lion Dine's ${mealType} page and structure it into JSON format.
 
 The text contains information about multiple dining halls, each with:
