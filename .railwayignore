@@ -1,0 +1,27 @@
+# Railway ignore file
+# Files/folders to exclude from Railway deployment
+
+# Local environment
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+
+# Development
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Documentation (optional - remove if you want docs deployed)
+# *.md
+# !README.md
+
+# Sample data (not needed in production)
+sample-responses/
+
+# Scripts
+scripts/test-*.sh
+scripts/test-*.ts

@@ -1,0 +1,155 @@
+{
+  "mealType": "breakfast",
+  "timestamp": "2026-01-28T19:17:08.411Z",
+  "diningHalls": [
+    {
+      "name": "Ferris",
+      "hours": "7:30 AM to 11:00 AM",
+      "status": "open",
+      "stations": [
+        {
+          "name": "Main Line",
+          "items": [
+            "Apple Pancakes",
+            "Scrambled Eggs",
+            "Roasted Breakfast Potatoes",
+            "Sliced Ham",
+            "Turkey Sausage",
+            "Biscuits and Sausage Gravy"
+          ]
+        },
+        {
+          "name": "Vegan Station",
+          "items": [
+            "Tofu Scramble",
+            "Ratatouille",
+            "Beyond Sausage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "John Jay",
+      "hours": "9:30 AM to 11:00 AM",
+      "status": "open",
+      "stations": [
+        {
+          "name": "Soup Station",
+          "items": [
+            "Oatmeal",
+            "Strawberries and Cream Grits"
+          ]
+        },
+        {
+          "name": "Main Line",
+          "items": [
+            "Scramble Eggs",
+            "Egg White Scramble",
+            "Funfetti Pancakes",
+            "Spinach and Yellow Peppers",
+            "Breakfast Potatoes",
+            "Corned Beef"
+          ]
+        },
+        {
+          "name": "Vegan Station",
+          "items": [
+            "Tofu Scramble",
+            "Vegan Sausage",
+            "Spinach and Yellow Peppers"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hewitt",
+      "hours": "7:30 AM to 10:00 AM",
+      "status": "open",
+      "stations": [
+        {
+          "name": "500 Degrees",
+          "items": [
+            "Veggie Breakfast Pizza",
+            "Breakfast Pizza",
+            "Margherita Flat Bread Pizza"
+          ]
+        },
+        {
+          "name": "Homestyle",
+          "items": [
+            "Waffles",
+            "Buttermilk Pancakes",
+            "Turkey Bacon"
+          ]
+        },
+        {
+          "name": "The Sweet Shoppe",
+          "items": [
+            "Double Chocolate Chip Muffin",
+            "Blueberry Muffin",
+            "Cranberry Muffin",
+            "Croissant"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Diana",
+      "hours": "9:00 AM to 3:00 PM",
+      "status": "open",
+      "stations": [
+        {
+          "name": "Homestyle",
+          "items": [
+            "Scrambled Eggs",
+            "French Toast",
+            "Belgian Waffle"
+          ]
+        },
+        {
+          "name": "Smoothie Lab",
+          "items": [
+            "Very Green Smoothie",
+            "Strawberry Banana Smoothie",
+            "Berry Blast Smoothie"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chef Don's",
+      "hours": "8:00 AM to 11:00 AM",
+      "status": "open",
+      "stations": [
+        {
+          "name": "Sandwiches",
+          "items": [
+            "Bacon egg and cheese bagel",
+            "Ham egg and cheese bagel",
+            "Vegan breakfast bagel"
+          ]
+        },
+        {
+          "name": "Sides",
+          "items": [
+            "Cup of oatmeal",
+            "Piece of fruit",
+            "Danish pastry"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Faculty House",
+      "hours": "",
+      "status": "closed",
+      "stations": []
+    },
+    {
+      "name": "Johnny's",
+      "hours": "",
+      "status": "closed",
+      "stations": []
+    }
+  ]
+}
