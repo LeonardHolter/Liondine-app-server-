@@ -120,8 +120,8 @@ class MenuCache {
 // Export singleton instance
 export const menuCache = new MenuCache(1440); // 24 hours
 
-// Run cleanup every hour
-if (typeof setInterval !== 'undefined') {
+// Run cleanup every hour (only in server environment)
+if (typeof window === 'undefined' && typeof setInterval !== 'undefined') {
   setInterval(() => {
     menuCache.cleanup();
   }, 60 * 60 * 1000); // Every hour

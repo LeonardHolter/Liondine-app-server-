@@ -2,10 +2,15 @@
  * File-Based Cache for Menu Data
  * Persists cache across server restarts
  * Useful for production environments
+ * 
+ * NOTE: This is an optional upgrade. The default in-memory cache is used.
+ * To use this, import fileCache instead of menuCache in your API routes.
  */
 
-import { promises as fs } from 'fs';
-import path from 'path';
+// Only import fs in Node.js environment
+const fs = typeof window === 'undefined' ? require('fs').promises : null;
+const path = typeof window === 'undefined' ? require('path') : null;
+
 import { MenuData } from '@/types/menu';
 
 interface CacheEntry {
@@ -32,6 +37,7 @@ class FileCache {
    * Initialize cache directory
    */
   private async ensureCacheDir(): Promise<void> {
+    if (!fs) return;
     try {
       await fs.mkdir(this.cacheDir, { recursive: true });
     } catch (error) {
@@ -43,7 +49,7 @@ class FileCache {
    * Load cache from disk
    */
   private async loadCache(): Promise<void> {
-    if (this.loaded) return;
+    if (this.loaded || !fs || !path) return;
 
     try {
       await this.ensureCacheDir();
@@ -64,6 +70,7 @@ class FileCache {
    * Save cache to disk
    */
   private async saveCache(): Promise<void> {
+    if (!fs || !path) return;
     try {
       await this.ensureCacheDir();
       const cachePath = path.join(this.cacheDir, 'menu-cache.json');
@@ -182,5 +189,9 @@ class FileCache {
   }
 }
 
-// Export singleton instance
-export const fileCache = new FileCache('.cache', 1440); // 24 hours
+// Export class for manual instantiation
+// Don't auto-instantiate to avoid build-time issues
+export { FileCache };
+
+// To use: import { FileCache } from '@/lib/file-cache';
+//         const fileCache = new FileCache('.cache', 1440);
