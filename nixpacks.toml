@@ -2,7 +2,8 @@
 # This file helps ensure proper builds
 
 [phases.setup]
-nixPkgs = ["nodejs_18", "npm-9_x"]
+# Use Node.js 20 which has native File API support
+nixPkgs = ["nodejs_20", "npm-10_x"]
 
 [phases.install]
 cmds = ["npm ci --legacy-peer-deps"]
@@ -14,4 +15,4 @@ cmds = ["npm run build"]
 cmd = "npm start"
 
 # Cache bust identifier - change this to force fresh build
-# Last updated: 2026-01-28-v2
+# Last updated: 2026-01-28-v3
